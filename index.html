@@ -122,9 +122,10 @@
 				lightSouth,
 				lightSouthColor 	= 0xFC0101,
 				lightSouthIntensity = 30,
+				waveColor 			= lightNorthColor,
 				offsetUpdateSpeed   = 0.23,			// Regulate the y-offset of the alpha texture at render time (scale the 'tdd' AVG); 
 
-				numWaves 	= segments,
+				numWaves 	= segments+3,
 				waves 		= [],
 				sampleRate 	= 0.04,					// spline curve sample rate for wave lines building
 				wavesCreated	  = false,
@@ -329,11 +330,11 @@
 						// Create the i-th cube
 						cube = 	new THREE.Mesh(
 									new THREE.BoxGeometry(cube_L_coef * cubeSize, cube_l_coef * cubeSize, cube_h_coef * cubeSize),
-									new THREE.MeshNormalMaterial({
+									new THREE.MeshStandardMaterial({
 											wireframe   : false,
-											flatShading	: true,  
+											flatShading	: true,
 											transparent	: true,  
-											opacity    	: 0.68,
+											opacity    	: 0.74, 	// 0.68
 											fog 		: false 	// we have black fog in the scene
 									})
 								);
@@ -506,7 +507,6 @@
 					{
 						var splineCurve,
 							linePoints,
-							waveColor	= getRandomColor(), 	// Get a random HEX color
 							curvePoints	= [],
 							x_pos		= 0 - radius + (1.5 / 2)*radiusSS;// sphere centered in (0, 0, 0)	
 
@@ -622,9 +622,13 @@
 			    	switch (e.keyCode)
 			        {
 			        	case 49:    // 	 1   (Num. 1 key)
+			        		waveColor 		 = getRandomColor();
 			        		changeWavesColor = true;
 			        		break;
 			        
+			        	case 27: 	//  ESC  (Escape Key)
+			        		if (gui)  gui.close();
+
 			       		//default:
 			       			//console.log("DEBUG: pressed key: " + e.keyCode + " === " + e.code);
 			       			//break;
@@ -768,7 +772,6 @@
 				{
 					var splineCurve,
 						linePoints,
-						waveColor	= getRandomColor(), 	// Get a random HEX color
 						curvePoints	= [],
 						x_pos		= 0 - radius + (1.5 / 2)*radiusSS; 		// sphere centered in (0, 0, 0)	
 						oldBufferPositions = waves[i].geometry.attributes.position.array; 	
@@ -840,7 +843,8 @@
 						SET_DEFAULT			: function(){ 
 							setDefaultParams();
 						},
-						changeWavesColor	: function(){ 
+						changeWavesColor	: function(){
+							waveColor 		 = getRandomColor();
 							changeWavesColor = true;
 						},
 						ZOOM_OUT__ON_OFF 		: function(){ 
@@ -858,10 +862,12 @@
 						cubeScale_h 		: -1.19,
 
 						NorthIntensity  	: 30,
-						NorthColor 	    	: "#0101FC",
+						NorthColor 	    	: "#ffffff",
 
-						SouthColor 	    	: "#FC0101",
+						SouthColor 	    	: "#ffffff",
 						SouthIntensity  	: 30,
+
+						WaveColor 			: lightNorthColor,
 
 						SetSideRengering 	: THREE.DoubleSide,  // spiral spheres internal side rendering ( THREE.DoubleSide )
 						
@@ -903,7 +909,13 @@
 
 
 					var f2 = gui.addFolder('Colors and Light'); 	f2.close();
-						f2.add(controller, "changeWavesColor").name("Change Wave Lines Colors (Random)");
+						f2.add(controller, "changeWavesColor").name("Change Wave Lines Colors (Random) [Press 1]");
+						f2.addColor(controller, "WaveColor").onChange(function(){
+							
+							waveColor = controller.WaveColor;
+							console.log("DEBUG : waveColor = " + controller.WaveColor);
+							changeWavesColor = true;
+						}).name("Wave Color");
 						f2.add(controller, "BounceSpeed", -2.0, 2.0, 0.01).onChange(function()
 						{
 							BounceSpeed = controller.BounceSpeed;
