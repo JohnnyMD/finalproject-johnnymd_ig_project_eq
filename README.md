@@ -1,4 +1,4 @@
-# Interactive Graphics  -  Final Project  -  2019  -  [Web Demo](https://sapienzainteractivegraphicscourse.github.io/finalproject-johnnymd_ig_project_eq/)
+# Interactive Graphics  -  Final Project  -  2019  -  [Web Demo](https://johnnymd.github.io/Web-Audio-Visualizer-IG)
 
 >   La Sapienza - University of Rome
 
