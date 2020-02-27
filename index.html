@@ -908,7 +908,7 @@
 						}).name("Change Audio Volume");
 
 
-					var f2 = gui.addFolder('Colors and Light'); 	f2.close();
+					var f2 = gui.addFolder('Colors and Light'); 	f2.open();
 						f2.add(controller, "changeWavesColor").name("Change Wave Lines Colors (Random) [Press 1]");
 						f2.addColor(controller, "WaveColor").onChange(function(){
 							
@@ -965,116 +965,117 @@
 					// presetJSON: created from pressing the gear.
 					function getPresets() {
 						return {
-							  "preset"     : "RockPreset",
-							  "closeOnTop" : true,
-							  "closed"     : false,
-							  "remembered": {
-							    "Default": {
-							      "0": {
-							        "Smoothness": 0,
-							        "PeaksTresholdUpdate": -55.50,
-							        "PeaksDecreasingRate": 1.0,
-							        "AudioVolume": 1,
-							        "BounceSpeed": 0.23,
-							        "NorthColor": "#0101FC",
-							        "SouthColor": "#FC0101",
-							        "NorthIntensity": 30,
-							        "SouthIntensity": 30,
-							        "SetSideRengering": 2,
-							        "cubeScale_L": -0.7,
-							        "cubeScale_l": -0.7,
-							        "cubeScale_h": -1.19
-							      }
-							    },
-							    "BasicPreset": {
-							      "0": {
-							        "Smoothness": 0,
-							        "PeaksTresholdUpdate": 10,
-							        "PeaksDecreasingRate": 0.96,
-							        "AudioVolume": 1,
-							        "BounceSpeed": 0.23,
-							        "NorthColor": "#0101FC",
-							        "SouthColor": "#FC0101",
-							        "NorthIntensity": 30,
-							        "SouthIntensity": 30,
-							        "SetSideRengering": 2,
-							        "cubeScale_L": 0,
-							        "cubeScale_l": 0,
-							        "cubeScale_h": 0
-							      }
-							    },
-							    "RocketPreset": {
-							      "0": {
-							        "Smoothness": 0,
-							        "PeaksTresholdUpdate": -230,
-							        "PeaksDecreasingRate": 0.96,
-							        "AudioVolume": 1,
-							        "BounceSpeed": 0.23,
-							        "NorthColor": "#0101FC",
-							        "SouthColor": "#FC0101",
-							        "NorthIntensity": 30,
-							        "SouthIntensity": 30,
-							        "SetSideRengering": 2,
-							        "cubeScale_L": 0,
-							        "cubeScale_l": 0,
-							        "cubeScale_h": 0
-							      }
-							    },
-							    "Rocket_2_Preset": {
-							      "0": {
-							        "Smoothness": 0,
-							        "PeaksTresholdUpdate": -230,
-							        "PeaksDecreasingRate": 0.96,
-							        "AudioVolume": 1,
-							        "BounceSpeed": 0.23,
-							        "NorthColor": "#0101FC",
-							        "SouthColor": "#FC0101",
-							        "NorthIntensity": 30,
-							        "SouthIntensity": 30,
-							        "SetSideRengering": 2,
-							        "cubeScale_L": -0.21,
-							        "cubeScale_l": -0.405,
-							        "cubeScale_h": -1.0050000000000001
-							      }
-							    },
-							    "RockPreset": {
-							      "0": {
-							        "Smoothness": 0,
-							        "PeaksTresholdUpdate": -55.5,
-							        "PeaksDecreasingRate": 1,
-							        "AudioVolume": 1,
-							        "BounceSpeed": 0.23,
-							        "NorthColor": "#0101FC",
-							        "SouthColor": "#FC0101",
-							        "NorthIntensity": 30,
-							        "SouthIntensity": 30,
-							        "SetSideRengering": 2,
-							        "cubeScale_L": -0.7000000000000001,
-							        "cubeScale_l": -0.7000000000000001,
-							        "cubeScale_h": -1.19
-							      }
-							   	}
-							  },
-							  "folders": {
-							    "Audio": {
-							      "preset": "RockPreset",
-							      "closed": false,
-							      "folders": {}
-							    },
-							    "Colors and Light": {
-							      "preset": "RockPreset",
-							      "closed": false,
-							      "folders": {}
-							    },
-							    "Cubes/Bars": {
-							      "preset": "RockPreset",
-							      "closed": true,
-							      "folders": {}
-							    }
-							  }
-							};
+						  "preset": "Default",
+						  "closeOnTop": true,
+						  "closed": false,
+						  "remembered": {
+						    "Default": {
+						      "0": {
+						        "Smoothness": 0,
+						        "PeaksTresholdUpdate": -55.5,
+						        "PeaksDecreasingRate": 1,
+						        "AudioVolume": 1,
+						        "WaveColor": 66044,
+						        "BounceSpeed": 0.23,
+						        "NorthColor": "#0101FC",
+						        "SouthColor": "#FC0101",
+						        "NorthIntensity": 30,
+						        "SouthIntensity": 30,
+						        "SetSideRengering": 2,
+						        "cubeScale_L": -0.7000000000000001,
+						        "cubeScale_l": -0.7000000000000001,
+						        "cubeScale_h": -1.19
+						      }
+						    },
+						    "BasicPreset": {
+						      "0": {
+						        "Smoothness": 0,
+						        "PeaksTresholdUpdate": 10,
+						        "PeaksDecreasingRate": 0.96,
+						        "AudioVolume": 1,
+						        "BounceSpeed": 0.23,
+						        "NorthColor": "#0101FC",
+						        "SouthColor": "#FC0101",
+						        "NorthIntensity": 30,
+						        "SouthIntensity": 30,
+						        "SetSideRengering": 2,
+						        "cubeScale_L": 0,
+						        "cubeScale_l": 0,
+						        "cubeScale_h": 0
+						      }
+						    },
+						    "RocketPreset": {
+						      "0": {
+						        "Smoothness": 0,
+						        "PeaksTresholdUpdate": -230,
+						        "PeaksDecreasingRate": 0.96,
+						        "AudioVolume": 1,
+						        "BounceSpeed": 0.23,
+						        "NorthColor": "#0101FC",
+						        "SouthColor": "#FC0101",
+						        "NorthIntensity": 30,
+						        "SouthIntensity": 30,
+						        "SetSideRengering": 2,
+						        "cubeScale_L": 0,
+						        "cubeScale_l": 0,
+						        "cubeScale_h": 0
+						      }
+						    },
+						    "Rocket_2_Preset": {
+						      "0": {
+						        "Smoothness": 0,
+						        "PeaksTresholdUpdate": -230,
+						        "PeaksDecreasingRate": 0.96,
+						        "AudioVolume": 1,
+						        "BounceSpeed": 0.23,
+						        "NorthColor": "#0101FC",
+						        "SouthColor": "#FC0101",
+						        "NorthIntensity": 30,
+						        "SouthIntensity": 30,
+						        "SetSideRengering": 2,
+						        "cubeScale_L": -0.21,
+						        "cubeScale_l": -0.405,
+						        "cubeScale_h": -1.0050000000000001
+						      }
+						    },
+						    "RockPreset": {
+						      "0": {
+						        "Smoothness": 0,
+						        "PeaksTresholdUpdate": -55.5,
+						        "PeaksDecreasingRate": 1,
+						        "AudioVolume": 1,
+						        "BounceSpeed": 0.23,
+						        "NorthColor": "#0101FC",
+						        "SouthColor": "#FC0101",
+						        "NorthIntensity": 30,
+						        "SouthIntensity": 30,
+						        "SetSideRengering": 2,
+						        "cubeScale_L": -0.7000000000000001,
+						        "cubeScale_l": -0.7000000000000001,
+						        "cubeScale_h": -1.19
+						      }
+						    }
+						  },
+						  "folders": {
+						    "Audio": {
+						      "preset": "RockPreset",
+						      "closed": false,
+						      "folders": {}
+						    },
+						    "Colors and Light": {
+						      "preset": "RockPreset",
+						      "closed": true,
+						      "folders": {}
+						    },
+						    "Cubes/Bars": {
+						      "preset": "RockPreset",
+						      "closed": true,
+						      "folders": {}
+						    }
+						  }
+						};
 					}; // --- END setRocketPreset() --- //
-					
+				
 
 				// Set default parameters
 				function setDefaultParams()
