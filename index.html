@@ -528,7 +528,8 @@
 
 						var waveGeometry = new 	THREE.BufferGeometry().setFromPoints( linePoints );
 						var waveMaterial = new 	THREE.LineBasicMaterial({ 
-													color : waveColor 
+													color    : waveColor,
+													blending : THREE.NoBlending
 												});
 
 						// Create the final object to add to the scene
@@ -635,6 +636,7 @@
 								expandBar.addClass('hidden');
 								$(this).attr('title', 'Show Playlist');
 							}
+							break;
 			        
 			        	case 49:    // 	 1   (Num. [1] key)
 			        		waveColor 		 = getRandomColor();
@@ -653,6 +655,7 @@
 								expandBar.addClass('hidden');
 								$(this).attr('title', 'Show Playlist');
 							}
+							break;
 
 			       		//default:
 			       			//console.log("DEBUG: pressed key: " + e.keyCode + " === " + e.code);
@@ -815,7 +818,8 @@
 
 					var waveGeometry = new 	THREE.BufferGeometry().setFromPoints( linePoints );
 					var waveMaterial = new 	THREE.LineBasicMaterial({ 
-												color : waveColor 
+												color : waveColor,
+												blending : THREE.NoBlending
 											});
 					// Create the final object to get the properties from
 					var wave = new THREE.Line( waveGeometry, waveMaterial );
