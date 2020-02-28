@@ -117,12 +117,12 @@
 				segmentsSS		= 64,
 
 				lightNorthIntensity = 130,
-				lightNorthColor 	= 0x0101FC,
+				lightNorthColor 	= 0x0000FC,
 				lightNorth,
 				lightSouth,
-				lightSouthColor 	= 0xFC0101,
+				lightSouthColor 	= 0xFC0000,
 				lightSouthIntensity = 30,
-				waveColor 			= lightNorthColor,
+				waveColor 			= lightSouthColor,
 				offsetUpdateSpeed   = 0.23,			// Regulate the y-offset of the alpha texture at render time (scale the 'tdd' AVG); 
 
 				numWaves 	= segments+3,
@@ -818,7 +818,7 @@
 
 					var waveGeometry = new 	THREE.BufferGeometry().setFromPoints( linePoints );
 					var waveMaterial = new 	THREE.LineBasicMaterial({ 
-												color : waveColor,
+												color    : waveColor,
 												blending : THREE.NoBlending
 											});
 					// Create the final object to get the properties from
@@ -891,9 +891,9 @@
 						cubeScale_h 		: -1.19,
 
 						NorthIntensity  	: 30,
-						NorthColor 	    	: "#ffffff",
+						NorthColor 	    	: "#0000FC",
 
-						SouthColor 	    	: "#ffffff",
+						SouthColor 	    	: "#FC0000",
 						SouthIntensity  	: 30,
 
 						WaveColor 			: lightNorthColor,
@@ -1004,10 +1004,10 @@
 						        "PeaksTresholdUpdate": -55.5,
 						        "PeaksDecreasingRate": 1,
 						        "AudioVolume": 1,
-						        "WaveColor": 66044,
+						        "WaveColor": 16515072,
 						        "BounceSpeed": 0.23,
-						        "NorthColor": "#0101FC",
-						        "SouthColor": "#FC0101",
+						        "NorthColor": "#0000FC",
+						        "SouthColor": "#FC0000",
 						        "NorthIntensity": 30,
 						        "SouthIntensity": 30,
 						        "SetSideRengering": 2,
@@ -1023,8 +1023,8 @@
 						        "PeaksDecreasingRate": 0.96,
 						        "AudioVolume": 1,
 						        "BounceSpeed": 0.23,
-						        "NorthColor": "#0101FC",
-						        "SouthColor": "#FC0101",
+						        "NorthColor": "#0000FC",
+						        "SouthColor": "#FC0000",
 						        "NorthIntensity": 30,
 						        "SouthIntensity": 30,
 						        "SetSideRengering": 2,
@@ -1040,8 +1040,8 @@
 						        "PeaksDecreasingRate": 0.96,
 						        "AudioVolume": 1,
 						        "BounceSpeed": 0.23,
-						        "NorthColor": "#0101FC",
-						        "SouthColor": "#FC0101",
+						        "NorthColor": "#0000FC",
+						        "SouthColor": "#FC0000",
 						        "NorthIntensity": 30,
 						        "SouthIntensity": 30,
 						        "SetSideRengering": 2,
@@ -1057,8 +1057,8 @@
 						        "PeaksDecreasingRate": 0.96,
 						        "AudioVolume": 1,
 						        "BounceSpeed": 0.23,
-						        "NorthColor": "#0101FC",
-						        "SouthColor": "#FC0101",
+						        "NorthColor": "#0000FC",
+						        "SouthColor": "#FC0000",
 						        "NorthIntensity": 30,
 						        "SouthIntensity": 30,
 						        "SetSideRengering": 2,
@@ -1074,8 +1074,8 @@
 						        "PeaksDecreasingRate": 1,
 						        "AudioVolume": 1,
 						        "BounceSpeed": 0.23,
-						        "NorthColor": "#0101FC",
-						        "SouthColor": "#FC0101",
+						        "NorthColor": "#0000FC",
+						        "SouthColor": "#FC0000",
 						        "NorthIntensity": 30,
 						        "SouthIntensity": 30,
 						        "SetSideRengering": 2,
@@ -1121,8 +1121,8 @@
 					deltaPeaks            = 10.0;
 					peaksDecreasingParam  = 0.96;
 
-					lightNorthColor 	= 0x0101FC;
-					lightSouthColor 	= 0xFC0101;
+					lightNorthColor 	= 0x0000FC;
+					lightSouthColor 	= 0xFC0000;
 					lightNorthIntensity = 130;
 					lightSouthIntensity = 30;
 					offsetUpdateSpeed   = 0.23;
