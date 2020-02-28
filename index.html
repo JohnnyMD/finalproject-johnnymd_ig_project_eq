@@ -627,8 +627,20 @@
 			        		break;
 			        
 			        	case 27: 	//  ESC  (Escape Key)
+			        		// Close the GUI controller if opened
 			        		if (gui)  gui.close();
 
+			        		// Close the playlist if opened 
+							var expandBar = $('#expand-bar');
+
+							if(expandBar.hasClass('hidden')){
+								// do nothing
+							}
+							else{
+								expandBar.addClass('hidden');
+								$(this).attr('title', 'Show Playlist');
+							}
+							
 			       		//default:
 			       			//console.log("DEBUG: pressed key: " + e.keyCode + " === " + e.code);
 			       			//break;
