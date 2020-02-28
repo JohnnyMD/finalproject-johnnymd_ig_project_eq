@@ -620,12 +620,7 @@
 					   //  z = camera.position.z;
 
 			    	switch (e.keyCode)
-			        {
-			        	case 49:    // 	 1   (Num. 1 key)
-			        		waveColor 		 = getRandomColor();
-			        		changeWavesColor = true;
-			        		break;
-			        
+			        {			        
 			        	case 27: 	//  ESC  (Escape Key)
 			        		// Close the GUI controller if opened
 			        		if (gui)  gui.close();
@@ -640,7 +635,25 @@
 								expandBar.addClass('hidden');
 								$(this).attr('title', 'Show Playlist');
 							}
-							
+			        
+			        	case 49:    // 	 1   (Num. [1] key)
+			        		waveColor 		 = getRandomColor();
+			        		changeWavesColor = true;
+			        		break;
+
+			        	case 80: 	//   P   ([P] Key)
+							// Toggle the Playlist
+							var expandBar = $('#expand-bar');
+
+							if(expandBar.hasClass('hidden')){
+								expandBar.removeClass('hidden');
+								$(this).attr('title', 'Hide Playlist');
+							}
+							else{
+								expandBar.addClass('hidden');
+								$(this).attr('title', 'Show Playlist');
+							}
+
 			       		//default:
 			       			//console.log("DEBUG: pressed key: " + e.keyCode + " === " + e.code);
 			       			//break;
